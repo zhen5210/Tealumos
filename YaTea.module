@@ -1,0 +1,8 @@
+#!name=去开屏广告
+#!desc=去除一些自用软件的开屏广告
+
+[URL Rewrite]
+^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ - reject
+
+[MITM]
+hostname = %APPEND% api.douban.com
