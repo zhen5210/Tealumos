@@ -1,10 +1,9 @@
 
-    "name": "酷酷的茶",
-    "description": "图标，144px",
-    "icons": [
-        {
-            "name": "素质差.png",
-            "url": https://raw.githubusercontent.com/zhen5210/Tealumos/refs/heads/main/IMG_4019.png
-        }
-    ]
-}
+{
+  "name": "酷酷的茶",
+  "description": "图标集合，144px",
+  "icons": [
+    {
+      "name": "素质差.png",
+      "url": "https://raw.githubusercontent.com/zhen5210/Tealumos/main/icons/suzhi.png"
+    }
