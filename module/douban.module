@@ -5,5 +5,4 @@
 ^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ - reject
 
 [MITM]
-hostname = %APPEND%
-api.douban.com
+hostname = %APPEND% api.douban.com
