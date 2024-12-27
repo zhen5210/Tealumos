@@ -1,11 +1,17 @@
-#!name=去广告
-#!desc=去除一些自用软件的广告
+#!name=去开屏广告
+#!desc=去除一些自用软件的开屏广告
 
 [URL Rewrite]
+# 12306 广告拦截规则
+^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList url script-analyze-echo-response https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js
+
+# 豆瓣广告拦截规则
 ^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ - reject
+
+# 京东广告拦截规则
 ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start - reject
 ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=queryMaterialAdverts - reject
 
-
 [MITM]
-hostname = %APPEND% api.douban.com,api.m.jd.com,
+# 确保以下域名开启 HTTPS 解密
+hostname = api.douban.com, api.m.jd.com, ad.12306.cn
