@@ -8,6 +8,8 @@
 # 豆瓣广告拦截规则
 ^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ url reject-dict
 ^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* url reject-dict
+^https?:\/\/img\d\.doubanio\.com\/view\/dale-online\/dale_ad\/ url reject
+^https?:\/\/erebor\.douban\.com\/count\/\?ad= url reject
 
 # 京东广告拦截规则
 ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start - reject
@@ -17,6 +19,9 @@
 ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)$|tiebaads\/commonbatch|c\/s\/sync$) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js
 ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js
 
+# 滴滴广告拦截规则
+^https?:\/\/common\.diditaxi\.com\.cn\/common\/v5 url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js
+
 [MITM]
 # 确保以下域名开启 HTTPS 解密
-hostname = %APPEND% api.douban.com, api.m.jd.com, ad.12306.cn, tiebac.baidu.com, *.tieba.baidu.com
+hostname = %APPEND% api.douban.com, api.m.jd.com, ad.12306.cn, tiebac.baidu.com, *.tieba.baidu.com, common.diditaxi.com.cn, img*.douban.com, frodo.douban.com, erebor.douban.com
