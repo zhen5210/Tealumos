@@ -1,22 +1,32 @@
-#!name=去开屏广告
-#!desc=去除一些自用软件的开屏广告
+#!name=去广告
+#!desc=自用软件广告拦截规则
 
 [URL Rewrite]
-# 12306 广告拦截规则
+# ======= 12306 ======= #
 ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList url script-analyze-echo-response https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js
 
-# 豆瓣广告拦截规则
+# ======= 豆瓣 ======= #
+# 开屏广告
 ^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ - reject
 ^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ url reject-dict
+# 普通广告
 ^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* url reject-dict
 ^https?:\/\/img\d\.doubanio\.com\/view\/dale-online\/dale_ad\/ url reject
+# 电影广告
 ^https?:\/\/frodo\.douban\.com\/api\/v2\/movie\/banner url reject
 ^https?:\/\/erebor\.douban\.com\/count\/\?ad= url reject
 
-# 京东广告拦截规则
+# ======= 京东 ======= #
+# 开屏广告
 ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start - reject
+# 物料广告
 ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=queryMaterialAdverts - reject
 
+# ======= 贴吧 ======= #
+# JSON响应处理
+^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)$|tiebaads\/commonbatch|c\/s\/sync$) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js
+# Proto响应处理
+^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js
+
 [MITM]
-# 确保以下域名开启 HTTPS 解密
-hostname = api.douban.com, api.m.jd.com, ad.12306.cn, img*.douban.com, frodo.douban.com, erebor.douban.com
+hostname = api.douban.com, api.m.jd.com, ad.12306.cn, img*.douban.com, frodo.douban.com, erebor.douban.com, tiebac.baidu.com, *.tieba.baidu.com
