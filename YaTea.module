@@ -29,4 +29,4 @@
 ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js
 
 [MITM]
-hostname = api.douban.com, api.m.jd.com, ad.12306.cn, img*.douban.com, frodo.douban.com, erebor.douban.com, tiebac.baidu.com, *.tieba.baidu.com
+hostname = %APPEND% api.douban.com, api.m.jd.com, ad.12306.cn, img*.douban.com, frodo.douban.com, erebor.douban.com, tiebac.baidu.com, *.tieba.baidu.com
