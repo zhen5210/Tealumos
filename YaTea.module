@@ -8,8 +8,6 @@
 # 豆瓣广告拦截规则
 ^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ url reject-dict
 ^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* url reject-dict
-^https?:\/\/img\d\.doubanio\.com\/view\/dale-online\/dale_ad\/ url reject
-^https?:\/\/erebor\.douban\.com\/count\/\?ad= url reject
 
 # 京东广告拦截规则
 ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start - reject
@@ -24,4 +22,4 @@
 
 [MITM]
 # 确保以下域名开启 HTTPS 解密
-hostname = %APPEND% api.douban.com, api.m.jd.com, ad.12306.cn, tiebac.baidu.com, *.tieba.baidu.com, common.diditaxi.com.cn, img*.douban.com, frodo.douban.com, erebor.douban.com
+hostname = %APPEND% api.douban.com, api.m.jd.com, ad.12306.cn, tiebac.baidu.com, *.tieba.baidu.com, common.diditaxi.com.cn
