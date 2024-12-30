@@ -1,0 +1,12 @@
+#name=阿茶自用
+#desc=解锁一些软件的Vip
+
+[URL Rewrite]
+# 解锁夸克网盘部分VIP
+https?:\/\/drive.*\.quark\.cn\/.+\/clouddrive\/(member.+|distribute\/detail.+|capacity\/growth\/info) url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/kuake.js
+
+# 解锁阿里云盘部分VIP
+https?:\/\/(api|member)\.(aliyundrive|alipan)\.com\/(.+\/(users|activity|user\/get)|((business|apps)\/.+\/users|adrive\/.+\/user)) url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/alidrive.js
+
+[MITM]
+hostname = %APPEND% drive*.quark.cn, *.aliyundrive.com, *.alipan.com
