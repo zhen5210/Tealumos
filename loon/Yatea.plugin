@@ -25,4 +25,4 @@
 
 [MITM]
 # 确保以下域名开启 HTTPS 解密
-hostname = %APPEND% api.douban.com, api.m.jd.com, ad.12306.cn, tiebac.baidu.com, *.tieba.baidu.com, common.diditaxi.com.cn, webcast-open.douyin.com, ether-pack.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao?.com, sf*-fe-tos.pglstatp-toutiao.com, lf-cdn-tos.bytescm.com
+hostname = %APPEND%api.douban.com, api.m.jd.com, ad.12306.cn, tiebac.baidu.com, *.tieba.baidu.com, common.diditaxi.com.cn, webcast-open.douyin.com, ether-pack.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao?.com, sf*-fe-tos.pglstatp-toutiao.com, lf-cdn-tos.bytescm.com
