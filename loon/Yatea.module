@@ -1,9 +1,6 @@
 #!name=酷酷的茶
 #!desc=去除一些自用软件的广告
 
-#!name=去广告
-#!desc=去除一些常用软件的广告，优化用户体验
-
 [URL Rewrite]
 # 12306 广告拦截规则
 ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList url script-analyze-echo-response https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js
