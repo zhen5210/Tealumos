@@ -14,9 +14,8 @@
 ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=queryMaterialAdverts url reject
 
 # 百度贴吧广告拦截规则
-^https?:\/\/(tiebac|c\.tieba)\.baidu\.com\/(c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)$|tiebaads\/commonbatch|c\/s\/sync$) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js
-^https?:\/\/(tiebac|c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js
-
+^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)$|tiebaads\/commonbatch|c\/s\/sync$) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js
+^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js
 # 滴滴广告拦截规则
 ^https?:\/\/common\.diditaxi\.com\.cn\/common\/v5 url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js
 
