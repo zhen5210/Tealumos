@@ -1,0 +1,28 @@
+#!name=酷酷的茶
+#!desc=去除一些自用软件的广告
+
+[URL Rewrite]
+# 12306 广告拦截规则
+^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList url script-analyze-echo-response https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js
+
+# 豆瓣广告拦截规则
+^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ url reject-dict
+^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* url reject-dict
+
+# 京东广告拦截规则
+^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start url reject
+^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=queryMaterialAdverts url reject
+
+# 百度贴吧广告拦截规则
+^https?:\/\/(tiebac|c\.tieba)\.baidu\.com\/(c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)$|tiebaads\/commonbatch|c\/s\/sync$) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js
+^https?:\/\/(tiebac|c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js
+
+# 滴滴广告拦截规则
+^https?:\/\/common\.diditaxi\.com\.cn\/common\/v5 url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js
+
+# 字节跳动与抖音广告拦截规则（融合）
+^https:\/\/(webcast-open\.douyin\.com\/webcast\/openapi\/feed\/\?|ether-pack\.pangolin-sdk-toutiao\.com\/union\/endcard\/|api-access\.pangolin-sdk-toutiao\d?\.com\/api\/ad\/|sf\d+-fe-tos\.pglstatp-toutiao\.com\/obj\/ad-pattern\/|lf-cdn-tos\.bytescm\.com\/obj\/static\/ad\/) url reject
+
+[MITM]
+# 确保以下域名开启 HTTPS 解密
+hostname = %APPEND%api.douban.com, api.m.jd.com, ad.12306.cn, tiebac.baidu.com, *.tieba.baidu.com, common.diditaxi.com.cn, webcast-open.douyin.com, ether-pack.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao?.com, sf*-fe-tos.pglstatp-toutiao.com, lf-cdn-tos.bytescm.com
