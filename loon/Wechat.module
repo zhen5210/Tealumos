@@ -7,10 +7,19 @@ DOMAIN, wxsmsdy.video.qq.com, REJECT
 DOMAIN, wxsnsdy.wxs.qq.com, REJECT
 DOMAIN, wxsnsdythumb.wxs.qq.com, REJECT
 
+# 微信公众号通用规则
+DOMAIN-SUFFIX, wxs.qq.com, REJECT
+DOMAIN, badjs.weixinbridge.com, REJECT
+DOMAIN, dns.weixin.qq.com.cn, REJECT
+
+# 移除公众号中的推广内容
+^http:\/\/\w+\.wxs\.qq\.com\/\d+\/\d+\/(snscosdownload|snssvpdownload)\/(SH|SZ)\/reserved\/\w+ reject-dict
+^https:\/\/mp\.weixin\.qq\.com\/mp\/(?:cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle) reject-dict
+
 # 收钱吧广告
 DOMAIN, ads-shopping.shouqianba.com, REJECT
 
-# 收钱吧小程序
+# 收钱吧小程序净化
 ^https:\/\/api\.pinduoduo\.com\/api\/ktt_gateway\/activity\/feeds\/personal_home_page\/ reject
 
 # 滴滴出行 微信小程序个人中心净化
@@ -25,15 +34,15 @@ DOMAIN, ads-shopping.shouqianba.com, REJECT
 ^https:\/\/m\.ctrip\.com\/restapi\/soa2\/13012\/getWaterflowInfo url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/T3.js
 ^https:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/tripAds url reject-dict
 
-# 申通快递
+# 申通快递 微信小程序净化
 ^https:\/\/customer-app\.sto\.cn\/api\/app\/banner\/banner reject-dict
 ^https:\/\/sto-customer-app\.oss-cn-shanghai\.aliyuncs\.com\/images reject-dict
 
-# 顺丰速运+
+# 顺丰速运 微信小程序净化
 ^https:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberGoods\/pointMallService\/goodsList reject-dict
 ^https:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query reject-dict
 
-# 中通快递
+# 中通快递 微信小程序净化
 ^https:\/\/fscdn\.zto\.com\/fs1 reject
 ^https:\/\/hdgateway\.zto\.com\/getAdInfo reject
 ^https:\/\/hdgateway\.zto\.com\/getApolloConfig reject
@@ -41,4 +50,4 @@ DOMAIN, ads-shopping.shouqianba.com, REJECT
 ^https:\/\/hdgateway\.zto\.com\/track reject
 
 [MitM]
-hostname = %APPEND% ads-shopping.shouqianba.com, api.pinduoduo.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, customer-app.sto.cn, fscdn.zto.com, hdgateway.zto.com, m.ctrip.com, mxsa.mxbc.net, sto-customer-app.oss-cn-shanghai.aliyuncs.com, ucmp.sf-express.com
+hostname = %APPEND% ads-shopping.shouqianba.com, api.pinduoduo.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, customer-app.sto.cn, fscdn.zto.com, hdgateway.zto.com, m.ctrip.com, mxsa.mxbc.net, sto-customer-app.oss-cn-shanghai.aliyuncs.com, ucmp.sf-express.com, mp.weixin.qq.com
