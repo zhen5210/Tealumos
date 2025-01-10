@@ -5,13 +5,17 @@
 # 12306 广告拦截规则
 ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList url script-analyze-echo-response https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js
 
-# 豆瓣广告拦截规则
-^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ url reject-dict
-^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* url reject-dict
-
-# 京东广告拦截规则
-^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start - reject
-^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=queryMaterialAdverts - reject
+# 百度输入法
+^https?:\/\/mbd\.baidu\.com\/ccs\/v1\/start\/confsync\?appname=baidu_input url reject-dict
+^https?:\/\/mime\.baidu\.com\/commer\/pocket_api\/enterprise_list url reject-dict
+^https?:\/\/mime\.baidu\.com\/sapi\/v1\/circle\/joinedlist url reject-dict
+^https?:\/\/mime\.baidu\.com\/sapi\/v1\/lccorpus\/(applist|pannellist)  url reject-dict
+^https?:\/\/mime\.baidu\.com\/v5\/activity\/advertisementnonrealtime url reject
+^https?:\/\/mime\.baidu\.com\/v5\/hotpatch\/check\?hotpatch url reject
+^https?:\/\/mime\.baidu\.com\/v5\/start_screen_ads\/list url reject
+^https?:\/\/mime\.baidu\.com\/v5\/start_screen_ads/list url reject-dict
+^https?:\/\/r6\.mo\.baidu\.com\/res\/file/advertisement\/files\/.+\.jpg url reject
+^https?:\/\/res\.mi\.baidu\.com\/imeres\/ime-res\/advertisement\/files\/.+\.jpg url reject
 
 # 百度贴吧广告拦截规则
 ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)$|tiebaads\/commonbatch|c\/s\/sync$) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js
@@ -20,9 +24,16 @@
 # 滴滴广告拦截规则
 ^https?:\/\/common\.diditaxi\.com\.cn\/common\/v5 url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js
 
-^https:\/\/webcast-open\.douyin\.com\/webcast\/openapi\/feed\/\? url reject-dict
+# 豆瓣广告拦截规则
+^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* url reject-dict
+^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ url reject-dict
 
+# 京东广告拦截规则
+^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=queryMaterialAdverts - reject
+^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start - reject
+
+^https:\/\/webcast-open\.douyin\.com\/webcast\/openapi\/feed\/\? url reject-dict
 
 [MITM]
 # 确保以下域名开启 HTTPS 解密
-hostname = %APPEND% api.douban.com, api.m.jd.com, ad.12306.cn, tiebac.baidu.com, *.tieba.baidu.com, common.diditaxi.com.cn
+hostname = %APPEND% ad.12306.cn, api.douban.com, api.m.jd.com, common.diditaxi.com.cn, mbd.baidu.com, mime.baidu.com, r6.mo.baidu.com, res.mi.baidu.com, tiebac.baidu.com, *.tieba.baidu.com
