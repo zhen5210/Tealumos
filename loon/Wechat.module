@@ -7,15 +7,6 @@ DOMAIN, wxsmsdy.video.qq.com, REJECT
 DOMAIN, wxsnsdy.wxs.qq.com, REJECT
 DOMAIN, wxsnsdythumb.wxs.qq.com, REJECT
 
-# 微信公众号通用规则
-DOMAIN-SUFFIX, wxs.qq.com, REJECT
-DOMAIN, badjs.weixinbridge.com, REJECT
-DOMAIN, dns.weixin.qq.com.cn, REJECT
-
-# 移除公众号中的推广内容
-^http:\/\/\w+\.wxs\.qq\.com\/\d+\/\d+\/(snscosdownload|snssvpdownload)\/(SH|SZ)\/reserved\/\w+ reject-dict
-^https:\/\/mp\.weixin\.qq\.com\/mp\/(?:cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle) reject-dict
-
 # 收钱吧广告
 DOMAIN, ads-shopping.shouqianba.com, REJECT
 
@@ -50,4 +41,4 @@ DOMAIN, ads-shopping.shouqianba.com, REJECT
 ^https:\/\/hdgateway\.zto\.com\/track reject
 
 [MitM]
-hostname = %APPEND% ads-shopping.shouqianba.com, api.pinduoduo.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, customer-app.sto.cn, fscdn.zto.com, hdgateway.zto.com, m.ctrip.com, mxsa.mxbc.net, sto-customer-app.oss-cn-shanghai.aliyuncs.com, ucmp.sf-express.com, mp.weixin.qq.com
+hostname = %APPEND% ads-shopping.shouqianba.com, api.pinduoduo.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, customer-app.sto.cn, fscdn.zto.com, hdgateway.zto.com, m.ctrip.com, mxsa.mxbc.net, sto-customer-app.oss-cn-shanghai.aliyuncs.com, ucmp.sf-express.com
