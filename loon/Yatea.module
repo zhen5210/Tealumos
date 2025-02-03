@@ -3,9 +3,6 @@
 
 [URL Rewrite]
 
-^https?:\/\/edifier-provider-oss\.edifier\.com\/marquee_img\/.jpg$ url reject-200
-^https?:\/\/edifier-provider-oss\.edifier\.com\/marquee_img\/.* url reject-200
-
 # 12306 广告拦截规则
 ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList url script-analyze-echo-response https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js
 
@@ -37,4 +34,4 @@
 
 [MITM]
 # 确保以下域名开启 HTTPS 解密
-hostname = %APPEND% ad.12306.cn, api.douban.com, api.m.jd.com, mbd.baidu.com, mime.baidu.com, r6.mo.baidu.com, res.mi.baidu.com, tiebac.baidu.com, *.tieba.baidu.com, edifier-provider-oss.edifier.com
+hostname = %APPEND% ad.12306.cn, api.douban.com, api.m.jd.com, mbd.baidu.com, mime.baidu.com, r6.mo.baidu.com, res.mi.baidu.com, tiebac.baidu.com, *.tieba.baidu.com
