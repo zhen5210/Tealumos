@@ -37,14 +37,4 @@
 
 [MITM]
 # 确保以下域名开启 HTTPS 解密
-hostname = %APPEND% 
-edifier-provider-oss.edifier.com, 
-ad.12306.cn, 
-api.douban.com, 
-api.m.jd.com, 
-mbd.baidu.com, 
-mime.baidu.com, 
-r6.mo.baidu.com, 
-res.mi.baidu.com, 
-tiebac.baidu.com, 
-*.tieba.baidu.com
+hostname = %APPEND% ad.12306.cn, api.douban.com, api.m.jd.com, mbd.baidu.com, mime.baidu.com, r6.mo.baidu.com, res.mi.baidu.com, tiebac.baidu.com, *.tieba.baidu.com, edifier-provider-oss.edifier.com
