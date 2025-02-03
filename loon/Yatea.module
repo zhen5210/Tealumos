@@ -3,8 +3,8 @@
 
 [URL Rewrite]
 
-^https?:\/\/edifier-provider-oss\.edifier\.com\/marquee_img\/20250122\/07fa3f844d1288d112fad829c80db918\.jpg$ url reject
-^https?:\/\/edifier-provider-oss\.edifier\.com\/marquee_img\/.* url reject
+^https?:\/\/edifier-provider-oss\.edifier\.com\/marquee_img\/20250122\/07fa3f844d1288d112fad829c80db918\.jpg$ url reject-200
+^https?:\/\/edifier-provider-oss\.edifier\.com\/marquee_img\/.* url reject-200
 
 # 12306 广告拦截规则
 ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList url script-analyze-echo-response https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js
