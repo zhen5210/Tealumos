@@ -2,11 +2,10 @@
 #!desc=去除一些自用软件的广告
 
 [URL Rewrite]
-# ======================= 新增 Edifier 广告屏蔽规则 =======================
+
 ^https?:\/\/edifier-provider-oss\.edifier\.com\/marquee_img\/20250122\/07fa3f844d1288d112fad829c80db918\.jpg$ url reject
 ^https?:\/\/edifier-provider-oss\.edifier\.com\/marquee_img\/.* url reject
 
-# ======================= 原有规则 =======================
 # 12306 广告拦截规则
 ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList url script-analyze-echo-response https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js
 
@@ -37,9 +36,9 @@
 ^https:\/\/webcast-open\.douyin\.com\/webcast\/openapi\/feed\/\? url reject-dict
 
 [MITM]
-# ======================= 修改后的 MITM 域名 =======================
+# 确保以下域名开启 HTTPS 解密
 hostname = %APPEND% 
-edifier-provider-oss.edifier.com,  # 新增 Edifier 域名
+edifier-provider-oss.edifier.com, 
 ad.12306.cn, 
 api.douban.com, 
 api.m.jd.com, 
