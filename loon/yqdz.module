@@ -2,7 +2,7 @@
 #!desc=一汽大众去广告
 
 [URL Rewrite]
-^https?:\/\/avris-prod-1256532032\.cos\.ap-beijing\.myqcloud\.com\/cms-static\/avris\/.*\.jpg reject
+^https?:\/\/avris-prod-1256532032\.cos\.ap-beijing\.myqcloud\.com\/cms-static\/avris\/.*\.jpg reject-200
 
 [MITM]
 # 确保以下域名开启 HTTPS 解密
