@@ -1,0 +1,10 @@
+#!name=一汽大众
+#!desc=一汽大众去广告
+
+[URL Rewrite]
+^https?:\/\/one-app-h5\.faw-vw\.com\/prod-api\/mobile\/one-app\/general\/public\/v1\/official_activity\/get_animation_putaway_list\?appkey.* url reject-200
+^https?:\/\/one-app-h5\.faw-vw\.com\/prod-api\/mobile\/one-app\/general\/public\/v1\/first_page\/get_carousel_list?appkey.* url reject-200
+
+[MITM]
+# 确保以下域名开启 HTTPS 解密
+hostname = %APPEND% one-app-h5.faw-vw.com
