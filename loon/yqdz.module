@@ -2,8 +2,10 @@
 #!desc=一汽大众去广告
 
 [URL Rewrite]
-^https?:\/\/avris-prod-1256532032\.cos\.ap-beijing\.myqcloud\.com\/cms-static\/avris\/.*\.jpg reject-200
+^https?:\/\/oneapp-api\.faw-vw\.com\/content\/.*Code=VWAPP_ICE_OPEN_SCREEN_ADS url reject-200
+# > yiqifengtian
+^https?:\/\/newsuperapp\.ftms\.com\.cn\/app-bff\/.*openScreenPicture url reject-200
 
 [MITM]
 # 确保以下域名开启 HTTPS 解密
-hostname = %APPEND% avris-prod-1256532032.cos.ap-beijing.myqcloud.com
+hostname = %APPEND% oneapp-api.faw-vw.com, newsuperapp.ftms.com.cn
