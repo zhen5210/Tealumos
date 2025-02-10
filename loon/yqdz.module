@@ -2,9 +2,8 @@
 #!desc=一汽大众去广告
 
 [URL Rewrite]
-^https?:\/\/one-app-h5\.faw-vw\.com\/prod-api\/mobile\/one-app\/general\/public\/v1\/official_activity\/get_animation_putaway_list\?appkey.* url reject
-^https?:\/\/one-app-h5\.faw-vw\.com\/prod-api\/mobile\/one-app\/general\/public\/v1\/first_page\/get_carousel_list?appkey.* url reject
+^https?:\/\/avris-prod-1256532032\.cos\.ap-beijing\.myqcloud\.com\/cms-static\/avris\/.*\.jpg reject
 
 [MITM]
 # 确保以下域名开启 HTTPS 解密
-hostname = %APPEND% one-app-h5.faw-vw.com
+hostname = %APPEND% avris-prod-1256532032.cos.ap-beijing.myqcloud.com
