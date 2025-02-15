@@ -10,7 +10,7 @@ fallback-dns-server =
 bypass-system = true
 
 # 跳过代理的 IP 和域名（本地网络、部分银行域名以及百度）
-skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local,captive.apple.com,*.ccb.com,*.abchina.com.cn,*.psbc.com,www.baidu.com
+skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12，localhost,*.local，captive.apple.com,*.ccb.com,*.abchina.com.cn,*.psbc.com，www.baidu.com
 
 # TUN 模式下排除的路由（包含常见的本地和保留地址范围）
 tun-excluded-routes = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24, 192.88.99.0/24, 192.168.0.0/16, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 255.255.255.255/32, 239.255.255.250/32
