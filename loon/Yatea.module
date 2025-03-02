@@ -29,12 +29,7 @@
 ^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* url reject-dict
 ^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ url reject-dict
 
-# 京东
-^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=queryMaterialAdverts - reject
-^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start - reject
-
-^https:\/\/webcast-open\.douyin\.com\/webcast\/openapi\/feed\/\? url reject-dict
 
 [MITM]
 # 确保以下域名开启 HTTPS 解密
-hostname = %APPEND% ad.12306.cn, api.douban.com, api.m.jd.com, mbd.baidu.com, mime.baidu.com, r6.mo.baidu.com, res.mi.baidu.com, tiebac.baidu.com, *.tieba.baidu.com, list-app-m.i4.cn
+hostname = %APPEND% ad.12306.cn, api.douban.com, mbd.baidu.com, mime.baidu.com, r6.mo.baidu.com, res.mi.baidu.com, tiebac.baidu.com, *.tieba.baidu.com, list-app-m.i4.cn
