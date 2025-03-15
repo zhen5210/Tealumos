@@ -25,6 +25,10 @@
 ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)$|tiebaads\/commonbatch|c\/s\/sync$) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js
 ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js
 
+# 彩云天气
+^https?:\/\/wrapper\.cyapi\.cn\/v1\/activity\? url echo-response application/json echo-response https://raw.githubusercontent.com/Keywos/rule/main/mocks/caiyun.json
+^https?:\/\/api\.caiyunapp\.com\/v1\/activity url reject-dict
+
 # 豆瓣
 ^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* url reject-dict
 ^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ url reject-dict
@@ -32,4 +36,4 @@
 
 [MITM]
 # 确保以下域名开启 HTTPS 解密
-hostname = %APPEND% ad.12306.cn, api.douban.com, mbd.baidu.com, mime.baidu.com, r6.mo.baidu.com, res.mi.baidu.com, tiebac.baidu.com, *.tieba.baidu.com, list-app-m.i4.cn
+hostname = %APPEND% ad.12306.cn, api.douban.com, mbd.baidu.com, mime.baidu.com, r6.mo.baidu.com, res.mi.baidu.com, tiebac.baidu.com, *.tieba.baidu.com, list-app-m.i4.cn, wrapper.cyapi.cn, api.caiyunapp.com
