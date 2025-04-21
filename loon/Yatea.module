@@ -29,7 +29,10 @@
 ^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* url reject-dict
 ^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ url reject-dict
 
+# 漫步者
+^https?:\/\/admin-app\.edifier\.com\/edifier_provider\/public\/getAppMarqueeForApp url reject-200
+
 
 [MITM]
 # 确保以下域名开启 HTTPS 解密
-hostname = %APPEND% ad.12306.cn, api.douban.com, mbd.baidu.com, mime.baidu.com, r6.mo.baidu.com, res.mi.baidu.com, tiebac.baidu.com, *.tieba.baidu.com, list-app-m.i4.cn
+hostname = %APPEND% ad.12306.cn, api.douban.com, mbd.baidu.com, mime.baidu.com, r6.mo.baidu.com, res.mi.baidu.com, tiebac.baidu.com, *.tieba.baidu.com, list-app-m.i4.cn, admin-app.edifier.com
