@@ -32,13 +32,6 @@
 # 漫步者
 ^https?:\/\/admin-app\.edifier\.com\/edifier_provider\/public\/getAppMarqueeForApp url reject-200
 
-# NB助手
-DOMAIN,open.e.kuaishou.cn,REJECT
-DOMAIN,v66-ad.ndcjl.com,REJECT
-DOMAIN,api-events.8ziben.com,REJECT
-DOMAIN-SUFFIX,yximgs.com,REJECT
-DOMAIN-SUFFIX,adkwai.com,REJECT
-
 
 
 [MITM]
