@@ -32,6 +32,16 @@
 # 漫步者
 ^https?:\/\/admin-app\.edifier\.com\/edifier_provider\/public\/getAppMarqueeForApp url reject-200
 
+# NB助手
+DOMAIN, tag=api-dsp.8ziben.com, enabled=true
+DOMAIN, tag=sdk.zhangyuyidong.cn, enabled=true
+DOMAIN, tag=open.e.kuaishou.cn, enabled=true
+DOMAIN, tag=v66-ad.ndcjl.com, enabled=true
+DOMAIN, tag=api-events.8ziben.com, enabled=true
+DOMAIN-SUFFIX, tag=yximgs.com, enabled=true
+DOMAIN-SUFFIX, tag=adkwai.com, enabled=true
+
+
 
 [MITM]
 # 确保以下域名开启 HTTPS 解密
