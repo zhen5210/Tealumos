@@ -1,0 +1,8 @@
+#!name=12123交管去广告
+#!desc=1213交管去开屏广告
+
+[URL Rewrite]
+^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery url reject
+
+[MitM]
+hostname = %APPEND% gab.122.gov.cn
