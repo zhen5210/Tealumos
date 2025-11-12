@@ -1,13 +1,13 @@
 #!name=Talkatone
-#!desc=Talkatone 日常使用模块
-# 本模块主要为 Talkatone 进行策略分流，解决使用某些节点时无法直接使用 Talkatone 的问题，并附带 Talkatone 去广告规则，可去除 APP 内的部分第三方广告
-# 本模块仅适用于 Talkatone 登陆后使用，不适用于软件注册，若尝试登录时失败可以将 tktn.at 的策略改为 DIRECT 后再试，成功后改回本来策略或重新更新本模块
+#!desc=Talkatone 日常使用模块，可进入参数编辑设置分流
+#!arguments=节点检测:PROXY, 代理分流:PROXY
+#!arguments-desc=分流代理策略\n\n· 支持填入节点名称或代理分组名称指定分流\n\n· 默认值是首页节点\n\n· 本模块包含去广告规则，可去除部分第三方广告，仅适用于登陆后使用，不适用于软件注册。Talkatone 针对使用者 IP 的审查趋于严格，单纯的分流的做法可能在部分节点或网络环境下不再有效，建议分别测试有效节点
 # 整理作者：https://github.com/LOWERTOP
 # 仓库地址：https://github.com/LOWERTOP/Shadowrocket-First
 
 [Rule]
 # 以下为该软件部分去广告规则
-# DOMAIN-KEYWORD,googleads,REJECT-DROP
+# DOMAIN-KEYWORD,googleads,REJECT
 DOMAIN-SUFFIX,aax.amazon-adsystem.com,REJECT
 DOMAIN-SUFFIX,aax-fe.amazon-adsystem.com,REJECT
 DOMAIN-SUFFIX,aax-fe-sin.amazon-adsystem.com,REJECT
@@ -72,13 +72,16 @@ DOMAIN-SUFFIX,view.adjust.com,REJECT
 DOMAIN-SUFFIX,vst.c.appier.net,REJECT
 DOMAIN-SUFFIX,wv.inner-active.mobi,REJECT
 DOMAIN-SUFFIX,www.googletagservices-cn.com,REJECT
+
+# 节点质量判断地址，需要特定节点代理
+DOMAIN-WILDCARD,relay-*.tktn.be,{{{节点检测}}}
 # 以下为该软件可能需要走代理的规则
-DOMAIN-SUFFIX,tktn.at,PROXY
-DOMAIN-SUFFIX,tktn.be,PROXY
+DOMAIN-SUFFIX,tktn.at,{{{代理分流}}}
+DOMAIN-SUFFIX,tktn.be,{{{代理分流}}}
 # 语音留言地址，一般需要代理
-DOMAIN-SUFFIX,vm.talkatone.com,PROXY
-# 贴图服务
-DOMAIN-SUFFIX,tenor.com,PROXY
+DOMAIN-SUFFIX,vm.talkatone.com,{{{代理分流}}}
+# 贴图服务地址，一般需要代理
+DOMAIN-SUFFIX,tenor.com,{{{代理分流}}}
 
 # 以下为该软件可能需要走直连的规则
 DOMAIN-SUFFIX,agkn.com,DIRECT
@@ -86,7 +89,6 @@ DOMAIN-SUFFIX,cohere.com,DIRECT
 DOMAIN-SUFFIX,crashlytics.com,DIRECT
 DOMAIN-SUFFIX,inmobi.com,DIRECT
 DOMAIN-SUFFIX,inner-active.mobi,DIRECT
-DOMAIN-SUFFIX,ip-api.com,DIRECT
 DOMAIN-SUFFIX,kochava.com,DIRECT
 DOMAIN-SUFFIX,mobilefuse.com,DIRECT
 DOMAIN-SUFFIX,talkatone.com,DIRECT
@@ -96,9 +98,9 @@ IP-CIDR,50.117.27.0/24,DIRECT,no-resolve
 IP-CIDR,63.251.124.0/24,DIRECT,no-resolve
 IP-CIDR,69.46.75.0/24,DIRECT,no-resolve
 
-[URL Rewrite]
-^https?:\/\/alt-r\.my\.com\/mobile - reject-dict
-^https?:\/\/imgx\.jampp\.com\/imgsrv\/tn - reject-img
-
-[MITM]
-hostname = %APPEND% alt-r.my.com, imgx.jampp.com
+# 本模块暂不启用以下内容
+# [URL Rewrite]
+# ^https?:\/\/alt-r\.my\.com\/mobile - reject-dict
+# ^https?:\/\/imgx\.jampp\.com\/imgsrv\/tn - reject-img
+# [MITM]
+# hostname = %APPEND% alt-r.my.com, imgx.jampp.com
